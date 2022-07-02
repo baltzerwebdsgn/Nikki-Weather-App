@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/98a35dcd56.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="content">
+      <header>
+          <div class="container">
+              <h1><span id="current_temp">89</span><span id="heading-degree-unit">°F</span></h1>
+              <div id="weather-forecast">
+                <img src="data:," alt="" id="weather-icon-current" />
+                <p class="forecast" id="forecast"</p>
+            </div>
+          </div>
+          <br/>
+          <button class="button" id="convert-unit">Celsius</button>
+        <div class="details">
+          <p>
+            
+            <span id="current_date">Monday, June 27th</span>
+            <br />
+            <span id="current_city">Paris, TX</span>
+            <br />
+            Real Feel:
+            <span id="current_rf">91</span><span id="details-degree-unit">°F</span>
+            <br />Humidity:
+            <span id="current_hum">60</span>%
+          </p>
+        </div>
+      </header>
+      <aside>
+        <div class="future_weather">
+          <table>
+            <tr class="day_weather">
+              <td class="day" id="d1">Tue</td>
+              <td class="weather" id="i0">🌤</td>
+              <td class="temp">
+                <span class="h_temp" id="h-aside-num-1">89</span><span class="h_temp" id="h-aside-unit-1">°F</span>/<span
+                  class="l_temp"
+                  id="l-aside-num-1"
+                  >64</span
+                ><span class="l_temp" id="l-aside-unit-1">°F</span>
+              </td>
+            </tr>
+            <tr class="day_weather">
+              <td class="day" id="d2">Wed</td>
+              <td class="weather" id="i1">🌤</td>
+              <td class="temp">
+                <span class="h_temp" id="h-aside-num-2">89</span><span class="h_temp" id="h-aside-unit-2">°F</span>/<span
+                  class="l_temp"
+                  id="l-aside-num-2"
+                  >64</span
+                ><span class="l_temp" id="l-aside-unit-2">°F</span>
+              </td>
+            </tr>
+            <tr class="day_weather">
+              <td class="day" id="d3">Thu</td>
+              <td class="weather" id="i2">🌤</td>
+              <td class="temp">
+                <span class="h_temp" id="h-aside-num-3">89</span><span class="h_temp" id="h-aside-unit-3">°F</span>/<span
+                  class="l_temp"
+                  id="l-aside-num-3"
+                  >64</span
+                ><span class="l_temp" id="l-aside-unit-3">°F</span>
+              </td>
+            </tr>
+            <tr class="day_weather">
+              <td class="day" id="d4">Fri</td>
+              <td class="weather" id="i3">🌤</td>
+              <td class="temp">
+                <span class="h_temp" id="h-aside-num-4">89</span><span class="h_temp" id="h-aside-unit-4">°F</span>/<span
+                  class="l_temp"
+                  id="l-aside-num-4"
+                  >64</span
+                ><span class="l_temp" id="l-aside-unit-4">°F</span>
+              </td>
+            </tr>
+            <tr class="day_weather">
+              <td class="day" id="d5">Sat</td>
+              <td class="weather" id="i4">🌤</td>
+              <td class="temp">
+                <span class="h_temp" id="h-aside-num-5">89</span><span class="h_temp" id="h-aside-unit-5">°F</span>/<span
+                  class="l_temp"
+                  id="l-aside-num-5"
+                  >64</span
+                ><span class="l_temp" id="l-aside-unit-5">°F</span>
+              </td>
+            </tr>
+            <tr class="day_weather">
+              <td class="day" id="d6">Sun</td>
+              <td class="weather" id="i5">🌤</td>
+              <td class="temp">
+                <span class="h_temp" id="h-aside-num-6">89</span><span class="h_temp" id="h-aside-unit-6">°F</span>/<span
+                  class="l_temp"
+                  id="l-aside-num-6"
+                  >64</span
+                ><span class="l_temp" id="l-aside-unit-6">°F</span>
+              </td>
+            </tr>
+          </table>
+      </div>
+      </aside>
+      <main>
+        <div class="weather_time">
+          <div>
+            <ul class="card">
+              <li class="time" id="time1">5pm</li>
+              <li class="w_icon" id="wi1">🌤</li>
+              <li>
+                <span class="h_temp"
+                id="f-card-num-1">87</span>
+                <span class="h_temp" 
+                id="f-card-unit-1">°F</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="card">
+              <li class="time" id="time2">6pm</li>
+              <li class="w_icon" id="wi2">🌤</li>
+              <li>
+                <span class="h_temp"
+                 id="f-card-num-2">87</span>
+                 <span class="h_temp" 
+                 id="f-card-unit-2">°F</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="card">
+              <li class="time" id="time3">7pm</li>
+              <li class="w_icon" id="wi3">🌤</li>
+              <li>
+                <span class="h_temp" 
+                id="f-card-num-3">87</span>
+                <span class="h_temp" 
+                id="f-card-unit-3">°F</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="card">
+              <li class="time" id="time4">8pm</li>
+              <li class="w_icon" id="wi4">🌤</li>
+              <li>
+                <span class="h_temp" 
+                id="f-card-num-4">87</span>
+                <span class="h_temp" 
+                id="f-card-unit-4">°F</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="card">
+              <li class="time" id="time5">9pm</li>
+              <li class="w_icon" id="wi5">🌤</li>
+              <li>
+                <span class="h_temp" 
+                id="f-card-num-5">87</span>
+                <span class="h_temp" 
+                id="f-card-unit-5">°F</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="card">
+              <li class="time" id="time6">10pm</li>
+              <li class="w_icon" id="wi6">🌤</li>
+              <li>
+                <span class="h_temp" 
+                id="f-card-num-6">87</span>
+                <span class="h_temp" 
+                id="f-card-unit-6">°F</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="card">
+              <li class="time" id="time7">11pm</li>
+              <li class="w_icon" id="wi7">🌤</li>
+              <li>
+                <span class="h_temp" 
+                id="f-card-num-7">87</span>
+                <span class="h_temp" 
+                id="f-card-unit-7">°F</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="card">
+              <li class="time" id="time8">12am</li>
+              <li class="w_icon" id="wi8">🌤</li>
+              <li>
+                <span class="h_temp" 
+                id="f-card-num-8">87</span>
+                <span class="h_temp" 
+                id="f-card-unit-8">°F</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="card">
+              <li class="time" id="time9">1am</li>
+              <li class="w_icon" id="wi9">🌤</li>
+              <li>
+                <span class="h_temp" 
+                id="f-card-num-9">87</span>
+                <span class="h_temp" 
+                id="f-card-unit-9">°F</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div id="footer-content">
+          <form id="search-form">
+            <i class="fas fa-search"></i>
+            <input
+              type="text"
+              id="search-form-input"
+              placeholder="Search for a city"
+              autocomplete="off"
+              autofocus="on"
+              required
+            />
+            <input type="submit" 
+            value="Search" 
+            class="button" 
+            id="search_button" />
+          </form>
+          <button class="button" id="current-weather-button">Current</button>
+      </div>
+      </footer>
+    </div>
+    <img
+          id="author_headshot"
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/030/295/original/Nbaltzer_Headshot%28small%29.jpg?1648487249"
+          alt="Nikki Baltzer Headshot"
+        />
+        <p id="author">Designed and Coded by Nikki Baltzer</p>
+      </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

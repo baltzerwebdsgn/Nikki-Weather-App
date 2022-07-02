@@ -1,0 +1,179 @@
+body {
+  font-family: "Saira Extra Condensed", sans-serif;
+  color: #fff;
+}
+
+#current_city,
+input,
+button {
+  font-family: "Merriweather", serif;
+}
+h1 {
+  font-size: 50px;
+  margin-bottom: 0;
+}
+.content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: minmax(10px, auto);
+  max-width: 915px;
+  border: 1px solid #253540;
+  margin: 0 auto;
+  background-color: #d9d6d2;
+}
+.h_temp {
+  color: #7292a6;
+}
+.l_temp {
+  color: #99b1bf;
+}
+#author_headshot {
+  border-radius: 50%;
+  display: block;
+  margin: 50px auto 0 auto;
+  width: 75px;
+  border: 2px solid #253540;
+}
+#author {
+  color: #253540;
+  text-align: center;
+}
+/* Current Weather Section */
+header {
+  grid-column: 1/5;
+  grid-row: 1/5;
+  background-color: #99b1bf;
+  padding-left: 20px;
+}
+.container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+#current_temp {
+  order: 1;
+  margin: 0;
+}
+#weather-forecast {
+  order: 2;
+}
+
+#weather-icon-current {
+  height: 100px;
+  object-fit: cover;
+}
+#forecast {
+  text-align: center;
+  text-transform: capitalize;
+  margin: -1.5em auto 0;
+}
+
+#current_date {
+  font-style: italic;
+  font-weight: 300;
+  color: #253540;
+}
+.details {
+  font-size: 24px;
+}
+#current_city {
+  font-size: 36px;
+  margin: 20px 0;
+}
+#current_rf {
+  font-size: 24px;
+}
+#current_hum {
+  font-size: 24px;
+}
+/* Hour Weather Card Section */
+main {
+  grid-column: 1/5;
+  grid-row: 5/7;
+  background-color: #d9d6d2;
+  overflow-x: scroll;
+  margin: 0 15px;
+}
+.card {
+  border: #253540 solid 1px;
+  list-style-type: none;
+  text-align: center;
+  padding: 5px 9px;
+  margin: 5px 5px;
+  color: #253540;
+  background-color: #fff;
+}
+.weather_time {
+  display: flex;
+  align-items: center;
+}
+.time {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+}
+
+/* Future Forecast Table*/
+aside {
+  grid-column: 5/6;
+  grid-row: 1/7;
+  background-color: #253540;
+  font-size: 38px;
+}
+
+.future_weather {
+  margin: 30px 20px;
+}
+
+/* Footer Search Section*/
+footer {
+  grid-column: 1/6;
+  background: #7292a6;
+}
+#footer-content {
+  margin: 10px 20px;
+}
+form {
+  display: inline;
+}
+.fa-search {
+  color: #d9d6d2;
+}
+#search-form-input {
+  border-radius: 25px;
+  font-size: 20px;
+  width: 50%;
+  padding: 0 20px;
+  color: #253540;
+  border: 2px solid #253540;
+}
+#search-form-input:focus {
+  border: 2px solid #253540;
+  outline: 2px solid #d9d6d2;
+}
+.button {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 25px;
+  background-color: #d9d6d2;
+  color: #253540;
+  border: 2px solid #253540;
+  transition: all 200ms ease;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: #99b1bf;
+  border: 2px solid #253540;
+  cursor: pointer;
+}
+#convert-unit {
+  margin: 0 auto;
+}
+#search_button {
+  margin: auto 20px;
+}
+#current-weather-button {
+  display: inline;
+}
