@@ -3,6 +3,10 @@ function updateText(newText, destination) {
   let text = document.querySelector(destination);
   text.innerHTML = newText;
 }
+// Function to convert Fahrenheit to Celcius
+function convertFtoC(x) {
+  return Math.ceil((x - 32) * (5 / 9));
+}
 
 //Reformats hour to be 12hour clock
 function correctHour(hour) {
@@ -115,16 +119,22 @@ function updatePageUnits(unitDegree) {
 
 function convertUnit(event) {
   event.preventDefault();
+  let cTemp = convertFtoC(Ftemp);
+  let rfTempC = convertFtoC(rfTempF);
+  let tempText = document.querySelector("#current_temp");
+  let rfText = document.querySelector("#current_rf");
   let text = document.querySelector("#convert-unit");
   let value = text.innerHTML;
 
   if (value === "Fahrenheit") {
     updatePageUnits("°F");
-
+    tempText.innerHTML = Ftemp;
+    rfText.innerHTML = rfTempF;
     text.innerHTML = "Celsius";
   } else if (value === "Celsius") {
     updatePageUnits("°C");
-
+    tempText.innerHTML = cTemp;
+    rfText.innerHTML = rfTempC;
     text.innerHTML = "Fahrenheit";
   }
 }
@@ -158,6 +168,9 @@ function getCurrentData(response) {
   let icon = response.data.weather[0].icon;
   let feels_like = Math.round(response.data.main.feels_like);
   let humidity = response.data.main.humidity;
+
+  Ftemp = temp;
+  rfTempF = feels_like;
 
   updateText(temp, "#current_temp");
   updateText(forecast, ".forecast");
@@ -236,3 +249,5 @@ currentButton.addEventListener("click", searchCurrentLocation);
 searchCurrentLocation();
 let now = new Date();
 updateCurrentDateTime(now);
+let Ftemp = null;
+let rfTempF = null;
